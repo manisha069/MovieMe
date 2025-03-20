@@ -1,0 +1,36 @@
+.mainContainer{
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: anchor-center;
+    flex-direction: column;
+
+}
+
+.appHeader{
+    font-family:Arial, Helvetica, sans-serif;
+    color: crimson;
+    size: 30px;
+    font-weight: 700;
+}
+
+.title1{
+    font-family:Arial, Helvetica, sans-serif;
+    color: crimson;
+}
+
+.title2{
+    font-family:Arial, Helvetica, sans-serif;
+    color: crimson;
+}
+
+.movieMeButton{
+
+    height: 90px;
+    width: 500px;
+    color: black;
+    border: 2ox solid black;
+    background-color: aqua;
+    border-radius: 3px;
+    font-size: large;
+}
