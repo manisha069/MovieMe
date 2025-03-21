@@ -1,1 +1,46 @@
-<p>movie-details works!</p>
+<div  *ngIf="!this.movieListService.listEnd" class="mainContainer">
+    <span class="plot"> {{ this.movieListService.movieData.plot}}</span>
+    
+
+    <div class="detailsSection">
+    
+        <div class="details1">
+            <span class="rating ">IMDB Rating: {{ this.movieListService.movieData.rating}}</span>
+            <span class=" value1">⋄</span>
+            <span class="year ">Year of Release: {{this.movieListService.movieData.year}}</span>
+        </div>
+        
+    
+        <div class="details2">
+            <span class="genre ">Genre: {{this.movieListService.movieData.genre}}</span>
+            <span class=" value1">⋄</span>
+            <span class="language ">Language: {{this.movieListService.movieData.language}}</span>
+            <span class=" value1">⋄</span>
+            <span class="director ">Director: {{this.movieListService.movieData.director}}</span>
+            <span class=" value1">⋄</span>
+            <span class="cast " >Cast: {{this.movieListService.movieData.actors}}</span>
+        </div>
+    
+       <div class="details3">
+        
+        <span class="awards ">{{this.movieListService.movieData.awards}}</span>
+        <span class=" value1">⋄</span>
+        <span class="boxOffice ">Box Office Collection: {{this.movieListService.movieData.boxOffice}}</span>
+       </div>
+    </div>
+
+    
+    
+    <div class="buttons">
+        <button class="nextButton"  routerLink="/movieDetails" (click)="nextPlot()">Next</button>
+        <button class="movieNameButton"  routerLink="/movieDetails" (click) = "movieName()">Reveal Movie</button>
+    
+    </div>
+    
+
+</div>
+
+<div *ngIf="this.movieListService.listEnd" class="movieEnd">
+    <h2>END OF OUR LIST</h2>
+    <button  routerLink="/home" > Back to main Page</button>
+</div>
