@@ -5,27 +5,29 @@
     <div class="detailsSection">
     
         <div class="details1">
-            <span class="rating ">IMDB Rating: {{ this.movieListService.movieData.rating}}</span>
+            <span class="rating blue">IMDB Rating: <span  class="black">{{ this.movieListService.movieData.rating}}</span> </span>
             <span class=" value1">⋄</span>
-            <span class="year ">Year of Release: {{this.movieListService.movieData.year}}</span>
+            <span class="year blue">Year of Release: <span class="black">{{ this.movieListService.movieData.year}}</span></span>
         </div>
         
     
         <div class="details2">
-            <span class="genre ">Genre: {{this.movieListService.movieData.genre}}</span>
+            <span class="genre blue">Genre: <span class="black">{{ this.movieListService.movieData.genre}}</span></span>
             <span class=" value1">⋄</span>
-            <span class="language ">Language: {{this.movieListService.movieData.language}}</span>
+            <span class="language blue">Language: <span class="black">{{ this.movieListService.movieData.language}}</span></span>
             <span class=" value1">⋄</span>
-            <span class="director ">Director: {{this.movieListService.movieData.director}}</span>
+            <span class="director blue" >Director: <span class="black">{{ this.movieListService.movieData.director}}</span></span>
             <span class=" value1">⋄</span>
-            <span class="cast " >Cast: {{this.movieListService.movieData.actors}}</span>
+            <span class="awards blue"> <span class="black">{{ this.movieListService.movieData.awards}}</span></span>
+            
         </div>
     
        <div class="details3">
+        <span class="cast blue">Cast: <span class="black">{{ this.movieListService.movieData.actors}}</span></span>
         
-        <span class="awards ">{{this.movieListService.movieData.awards}}</span>
+        
         <span class=" value1">⋄</span>
-        <span class="boxOffice ">Box Office Collection: {{this.movieListService.movieData.boxOffice}}</span>
+        <span class="boxOffice blue">Box Office Collection: <span class="black">{{ this.movieListService.movieData.boxOffice}}</span></span>
        </div>
     </div>
 
