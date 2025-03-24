@@ -35,9 +35,10 @@
     
     
     <div class="buttons">
-        <button class="nextButton"  routerLink="/movieDetails" (click)="nextPlot()">Next</button>
-        <button class="movieNameButton"  routerLink="/movieDetails" (click) = "movieName()">Reveal Movie</button>
-    
+        <button *ngIf="!showTitle" class="nextButton"   (click)="nextPlot()">Next</button>
+        <button *ngIf="!showTitle" class="movieNameButton"  routerLink="/movieDetails" (click) = "movieName()">Reveal Movie</button>
+        <button *ngIf="showTitle" class="nextButton" routerLink="/home">Go Back</button>
+        
     </div>
     
 
