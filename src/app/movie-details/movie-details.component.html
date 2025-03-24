@@ -1,4 +1,5 @@
 <div  *ngIf="!this.movieListService.listEnd" class="mainContainer">
+    <h2 *ngIf="showTitle" class = "movieTitle">{{ this.movieListService.movieData.title}}</h2>
     <span class="plot"> {{ this.movieListService.movieData.plot}}</span>
     
 
@@ -42,7 +43,32 @@
 
 </div>
 
+<div class="modal" id="tncModal">
+    <div class="modalContent">
+        <h4 class="close" (click)="closePopup()">❌</h4>
+
+            <h2 class="popupText">I solemnly swear to watch the movie whose name is displayed. 
+                <br>I swear not to be a picky b*tch, as the movies are great picks.
+                <br>I swear to only change the movie if it's seomthing I've seen before, only after a careful consideration of 5 minutes o fthe fact 
+            <br>"Do I really don't want to watch this masterpiece again?"</h2>
+            <div class="buttons2">
+                <button class="cancelButt" (click)="closePopup()">Cancel</button>
+                <button class="agreeButt" (click)="agreeButton()"  > I Agree</button>
+                
+            </div>
+                   
+    </div>
+  
+</div>
+
 <div *ngIf="this.movieListService.listEnd" class="movieEnd">
     <h2>END OF OUR LIST</h2>
     <button  routerLink="/home" > Back to main Page</button>
 </div>
+
+<!-- <div class="modal" id="tncModal">
+    <div class="modalContent">
+        <span class="yo">YOOOOOOOOO</span>
+    </div>
+</div> -->
+

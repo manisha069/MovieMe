@@ -10,6 +10,8 @@ export class MovieDetailsComponent {
 
   constructor(public movieListService : MovieService){}
 
+  showTitle:boolean = false;
+
   ngOnInit(){
     console.log(this.movieListService.movieData.genre)
   }
@@ -18,7 +20,22 @@ export class MovieDetailsComponent {
     this.movieListService.getNextMovieData();
   }
 
-  movieName(){
 
+  movieName(){
+    let mod = document.getElementById("tncModal")!;
+    console.log("modal", mod.style)
+   mod.style.display = "block";
+  }
+
+  closePopup(){
+    let mod = document.getElementById("tncModal")!;
+    // console.log("modal", mod.style)
+   mod.style.display = "none"
+
+  }
+
+  agreeButton(){
+    this.closePopup();
+    this.showTitle = true;
   }
 }
