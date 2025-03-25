@@ -37,5 +37,10 @@ export class MovieDetailsComponent {
   agreeButton(){
     this.closePopup();
     this.showTitle = true;
+
+    this.movieListService.getWhereToWatch(this.movieListService.movieData.title).subscribe(response =>{
+      console.log("where to watch data", response);
+      this.movieListService.movieListArray = response;
+    })
   }
 }

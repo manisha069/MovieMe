@@ -1,7 +1,10 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environment';
 import { moviesListArray } from '../models/moviesList.model';
+import { whereToWatchArray } from '../models/whereToWatch.model';
+import { Observable } from 'rxjs';
+import { title } from 'process';
 
 
 @Injectable({
@@ -65,4 +68,29 @@ export class MovieService {
     }
 
   }
+
+  // private headers = new HttpHeaders().set('Access-Control-Allow-Origin', '*') //to prevent CORS err or
+  // .set(environment.XRapidAPIHostLabel, environment.XRapidAPIHostValue)
+  // .set(environment.XRapidAPIKeyLabel, environment.XRapidAPIKeyValue)
+
+  
+  getWhereToWatch(titleName :string): Observable<whereToWatchArray>{
+    console.log("in service", titleName)
+
+  //   return this.http.get<whereToWatchArray>(environment.whereToWatchURL,{
+  //     headers : new HttpHeaders().set('Access-Control-Allow-Origin', '*') //to prevent CORS err or
+  //         .set(environment.XRapidAPIHostLabel, environment.XRapidAPIHostValue)
+  //         .set(environment.XRapidAPIKeyLabel, environment.XRapidAPIKeyValue),
+  //     params : new HttpParams().set('country', 'in')
+  //         .set('title',titleName)
+  //   })
+  // }
+  return this.http.get<whereToWatchArray>(environment.whereToWatchURL + "in/"+ titleName,{
+    headers : new HttpHeaders().set('Access-Control-Allow-Origin', '*') //to prevent CORS err or
+        .set(environment.XRapidAPIHostLabel, environment.XRapidAPIHostValue)
+        .set(environment.XRapidAPIKeyLabel, environment.XRapidAPIKeyValue),
+    // params : new HttpParams().set('country', 'in')
+    //     .set('title',titleName)
+  })
+}
 }
