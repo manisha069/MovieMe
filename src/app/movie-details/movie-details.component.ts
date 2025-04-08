@@ -23,13 +23,11 @@ export class MovieDetailsComponent {
 
   movieName(){
     let mod = document.getElementById("tncModal")!;
-    console.log("modal", mod.style)
    mod.style.display = "block";
   }
 
   closePopup(){
     let mod = document.getElementById("tncModal")!;
-    // console.log("modal", mod.style)
    mod.style.display = "none"
 
   }

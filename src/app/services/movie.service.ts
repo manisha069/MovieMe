@@ -86,7 +86,7 @@ export class MovieService {
   //   })
   // }
   return this.http.get<whereToWatchArray>(environment.whereToWatchURL + "in/"+ titleName,{
-    headers : new HttpHeaders().set('Access-Control-Allow-Origin', '*') //to prevent CORS err or
+    headers : new HttpHeaders().set('Access-Control-Allow-Origin', 'https://manisha069.github.io/MovieMe/home') //to prevent CORS err or
         .set(environment.XRapidAPIHostLabel, environment.XRapidAPIHostValue)
         .set(environment.XRapidAPIKeyLabel, environment.XRapidAPIKeyValue),
     // params : new HttpParams().set('country', 'in')
